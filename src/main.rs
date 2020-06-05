@@ -14,7 +14,7 @@ fn main() {
     const DEFAULT_LENGTH: i32 = 16;
     let max_length: i32 = get_cli_param_or_default(&cli_args, "max-length").unwrap();
     let length: i32 = get_cli_param_or_default(&cli_args, "length").unwrap();
-    let password_length = if length <= 0 {
+    let password_length = if length < 0 {
         DEFAULT_LENGTH
     } else if max_length > 16 && length > max_length {
         DEFAULT_MAX_LENGTH
