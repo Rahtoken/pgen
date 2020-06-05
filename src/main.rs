@@ -2,10 +2,10 @@
 extern crate clap;
 use clap::{App, ArgMatches};
 
-use rand::distributions::Alphanumeric;
-use rand::{thread_rng, Rng};
-use std::iter;
 use std::str::FromStr;
+
+mod pgen_lib;
+use pgen_lib::gen_pwd;
 
 fn main() {
     let cli_config = load_yaml!("cli.yml");
@@ -21,12 +21,7 @@ fn main() {
     } else {
         length
     };
-
-    let mut rng = thread_rng();
-    let password = iter::repeat(())
-        .map(|_| rng.sample(Alphanumeric))
-        .take(password_length as usize)
-        .collect::<String>();
+    let password = gen_pwd(password_length as usize);
     println!("{}", password);
 }
 
