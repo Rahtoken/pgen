@@ -10,3 +10,8 @@ Supported options:
 - -l, --length <LENGTH>
 - -m, --max-length <MAX LENGTH>
 
+## To-do
+[] Add tests.
+[] Add GitHub Actions CI.
+[] Automate releases.
+
