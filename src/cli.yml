@@ -1,0 +1,19 @@
+name: pgen
+version: "0.1"
+author: Rohan Ankarigari Boda
+about: Generates strong* passwords.
+args:
+    - length:
+        short: l
+        long: length
+        value_name: LENGTH
+        help: The required length of the generated password.
+        default_value: "16"
+        takes_value: true
+    - max-length:
+        short: m
+        long: max-length
+        value_name: MAX LENGTH
+        help: Override the maximum length.
+        default_value: "128"
+        takes_value: true
