@@ -14,12 +14,10 @@ fn main() {
     const DEFAULT_LENGTH: i32 = 16;
     let max_length: i32 = get_cli_param_or_default(&cli_args, "max-length").unwrap();
     let length: i32 = get_cli_param_or_default(&cli_args, "length").unwrap();
-    let password_length = if length < 0 {
-        DEFAULT_LENGTH
-    } else if max_length > 16 && length > max_length {
-        DEFAULT_MAX_LENGTH
-    } else {
-        length
+    let password_length = match length {
+        l if l < 0 => DEFAULT_LENGTH,
+        l if l > max_length && max_length > 16 => DEFAULT_MAX_LENGTH,
+        _ => length,
     };
     let password = gen_pwd(password_length as usize);
     println!("{}", password);
