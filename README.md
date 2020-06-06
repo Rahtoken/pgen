@@ -20,7 +20,7 @@ Supported options:
 - -m, --max-length <MAX LENGTH>
 
 ## To-do
-- [ ] Add tests.
-- [ ] Add GitHub Actions CI.
+- [x] Add tests.
+- [x] Add GitHub Actions CI.
 - [ ] Automate releases.
 
