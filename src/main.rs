@@ -20,7 +20,7 @@ fn main() {
         _ => length,
     };
     let password = gen_pwd(password_length as usize);
-    println!("{}", password);
+    print!("{}", password);
 }
 
 fn get_cli_param_or_default<T: FromStr>(cli: &ArgMatches, param: &str) -> Result<T, T::Err> {
