@@ -21,4 +21,12 @@ mod tests {
         assert_eq!(pwd.chars().count(), valid_size);
         Ok(())
     }
+
+    #[test]
+    fn test_pwd_gen_empty() -> Result<(), String> {
+        let empty_size = 0;
+        let pwd = gen_pwd(empty_size);
+        assert_eq!(pwd.chars().count(), empty_size);
+        Ok(())
+    }
 }
